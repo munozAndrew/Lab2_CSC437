@@ -1,0 +1,8 @@
+:root{
+    --color-accent: rgb(132, 125, 136);
+    --color-accent-inverted: rgb(89, 89, 100);
+    --color-link: var(--color-accent);
+    --color-link-inverted: var(--color-accent-inverted);
+    --color-text: rgb(26, 3, 54);
+    --color-text-inverted: rgb(88, 7, 7);
+}
