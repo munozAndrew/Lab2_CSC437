@@ -1,26 +1,43 @@
-
-import { html, css, LitElement } from "lit";
-import reset from './styles/reset.css.ts';
+import { LitElement, html, css } from 'lit';
+import { property, state } from 'lit/decorators.js';
 
 export class IndexListing extends LitElement {
-  static styles =[reset.styles,
-     css`
-    
-    ul {
-      padding-left: 1em;
-      list-style: disc;
-      list-style-position: inside;
-      padding: 0;
-      margin: 0;
+  @property() src?: string;
+  @state() items: Array<{ title: string; href: string }> = [];
+
+  static styles = css`
+    ul { list-style: none; padding: 0; margin: 0; }
+    li { padding: 0.5em 0; border-bottom: 1px solid #eee; }
+    a { text-decoration: none; }
+  `;
+
+  connectedCallback() {
+    super.connectedCallback();
+    if (this.src) this.hydrate(this.src);
+  }
+
+  private async hydrate(src: string) {
+    try {
+      const res = await fetch(src);
+      if (!res.ok) throw new Error(res.statusText);
+      this.items = await res.json();
+    } catch (e) {
+      console.error('Failed to load listing data:', e);
     }
-    ::slotted(li) {
-      display: list-item;
-      padding: 0.5em 0;
-      border-bottom: 1px solid #eee;
-    }
-  ` ];
+  }
 
   override render() {
-    return html`<ul><slot></slot></ul>`;
+    return html`
+      <ul>
+        ${this.items.length
+          ? this.items.map(
+              item => html`
+                <li>
+                  <a href=${item.href}>${item.title}</a>
+                </li>`
+            )
+          : html`<slot></slot>`}
+      </ul>
+    `;
   }
 }
