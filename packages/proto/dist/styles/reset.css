@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 1.5;
+}
+
+body{
+    line-height: 1.5;
+
+}
+
+img{
+    max-width: 100%;
+}
+
+ul, ol {
+    list-style: none;
+}

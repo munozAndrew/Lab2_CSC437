@@ -1,0 +1,51 @@
+:root{
+    --space-xs: 0.25rem;
+    --space-xm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+
+
+
+}
+
+body{
+    background-color: var(--color-accent);
+    color: var(--color-text);
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+header{
+    background-color: var(--color-accent-inverted);
+    color:var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-md) var(--space-lg);
+}
+
+a{
+    color: var(--color-text-inverted);
+
+}
+
+main{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--space-lg);
+    padding: var(--space-lg);
+}
+
+@media (max-width: 786px) {
+    main {
+        grid-template-columns: repeat(8, 1fr)   ;
+    }
+    
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
+    color: var(--color-text-inverted);
+    font-weight: 300;
+}

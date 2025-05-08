@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tab Saver - Landing Page</title>
+    <link rel="stylesheet" href="styles/page.css" />
+    <link rel="stylesheet" href="styles/reset.css" />
+
+    <link rel="stylesheet" href="styles/tokens.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script type="module" src="/scripts/darkmode.js"></script>
+    <script type="module">
+     import { define } from "@calpoly/mustang";
+     import { IndexListing } from "/src/list.ts"; 
+
+     define({
+        "index-listing": IndexListing
+    });
+  </script>
+
+</head>
+<body>
+    <header> 
+        <h1>Tab Saver</h1>
+        <p> </p>
+        <label id="darkmode-toggle">
+            <input type="checkbox" autocomplete="off">
+            Dark Mode
+        </label>
+    </header>
+
+    <main>
+        <section>
+            <h2>Main Concepts</h2>
+            <svg class="icon">
+                <use href="/icons/time.svg#icon-clock" />
+              </svg>
+              
+
+            <index-listing>
+                <li>
+                    <h3></h3>
+                    <a href="tab-group.html">Tab Group</a>
+
+                </li>
+                <li>
+                    <h3></h3>
+                    <a href="history.html">History</a>
+
+                </li>
+                <li>
+                    <h3></h3>
+                    <a href="session.html">Session</a>
+
+                </li>
+                <li>
+                    <h3></h3>
+                    <a href="websites.html">Websites</a>
+
+                </li>
+                <li>
+                    <h3></h3>
+                    <a href="schedule.html">Schedule</a>
+
+                </li>
+            </index-listing>
+        </section>
+    </main>
+    
+</body>
+</html>
