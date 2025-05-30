@@ -1,7 +1,6 @@
 import { Schema, model } from "mongoose";
 import { Bookmark } from "../models/bookmark";
 
-// Mongoose schema for the Bookmark interface
 const BookmarkSchema = new Schema<Bookmark>(
   {
     id:          { type: String, required: true, trim: true },
@@ -22,7 +21,6 @@ const BookmarkSchema = new Schema<Bookmark>(
 
 const BookmarkModel = model<Bookmark>("Bookmark", BookmarkSchema);
 
-// Service functions
 function index(): Promise<Bookmark[]> {
   return BookmarkModel.find().exec();
 }
@@ -31,7 +29,6 @@ function get(id: string): Promise<Bookmark | null> {
   return BookmarkModel.findOne({ id }).exec();
 }
 
-// (Optional) additional CRUD operations
 function create(data: Partial<Bookmark>): Promise<Bookmark> {
   return BookmarkModel.create(data as Bookmark);
 }
