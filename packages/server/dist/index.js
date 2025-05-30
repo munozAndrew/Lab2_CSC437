@@ -23,8 +23,8 @@ var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__ge
 ));
 var import_express = __toESM(require("express"));
 var import_mongo = require("./services/mongo");
-var import_bookmark_svc = __toESM(require("./services/bookmark-svc"));
-var import_group_svc = __toESM(require("./services/group-svc"));
+var import_bookmarks = __toESM(require("./routes/bookmarks"));
+var import_groups = __toESM(require("./routes/groups"));
 (0, import_mongo.connect)("BookmarkDB");
 const app = (0, import_express.default)();
 const port = process.env.PORT || 3e3;
@@ -34,24 +34,8 @@ app.use(import_express.default.static(staticDir));
 app.get("/hello", (_req, res) => {
   res.send("Hello, World");
 });
-app.get("/bookmarks", (_req, res) => {
-  import_bookmark_svc.default.index().then((list) => res.json(list));
-});
-app.get("/bookmarks/:id", (req, res) => {
-  import_bookmark_svc.default.get(req.params.id).then((bm) => {
-    if (bm) res.json(bm);
-    else res.status(404).send();
-  });
-});
-app.get("/groups", (_req, res) => {
-  import_group_svc.default.index().then((list) => res.json(list));
-});
-app.get("/groups/:id", (req, res) => {
-  import_group_svc.default.get(req.params.id).then((grp) => {
-    if (grp) res.json(grp);
-    else res.status(404).send();
-  });
-});
+app.use("/api/bookmarks", import_bookmarks.default);
+app.use("/api/groups", import_groups.default);
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
 });
