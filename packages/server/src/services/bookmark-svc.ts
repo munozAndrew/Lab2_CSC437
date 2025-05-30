@@ -1,7 +1,6 @@
 import { Schema, model } from "mongoose";
 import { Bookmark } from "../models/bookmark";
 
-// Mongoose schema for the Bookmark interface
 const BookmarkSchema = new Schema<Bookmark>(
   {
     id:          { type: String, required: true, trim: true },
