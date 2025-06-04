@@ -1,38 +1,75 @@
+// packages/server/src/routes/bookmarks.ts
 import express, { Request, Response } from "express";
 import { Bookmark } from "../models/bookmark";
 import BookmarkSvc from "../services/bookmark-svc";
 
 const router = express.Router();
 
-
-router.get("/", (_req, res: Response) => {
+// GET /api/bookmarks
+router.get("/", (_req: Request, res: Response): void => {
   BookmarkSvc.index()
-    .then((list: Bookmark[]) => res.json(list))
-    .catch((err) => res.status(500).send(err));
+    .then((list: Bookmark[]) => {
+      res.json(list);
+    })
+    .catch((err) => {
+      res.status(500).send(err);
+    });
 });
 
-router.get("/:id", (req, res: Response) => {
+// GET /api/bookmarks/:id
+router.get("/:id", (req: Request, res: Response): void => {
   BookmarkSvc.get(req.params.id)
-    .then((bm) => (bm ? res.json(bm) : res.status(404).end()))
-    .catch(() => res.status(500).end());
+    .then((bm) => {
+      if (bm) {
+        res.json(bm);
+      } else {
+        res.status(404).end();
+      }
+    })
+    .catch(() => {
+      res.status(500).end();
+    });
 });
 
-router.post("/", (req, res: Response) => {
+// POST /api/bookmarks
+router.post("/", (req: Request, res: Response): void => {
   BookmarkSvc.create(req.body)
-    .then((bm) => res.status(201).json(bm))
-    .catch((err) => res.status(500).send(err));
+    .then((bm) => {
+      res.status(201).json(bm);
+    })
+    .catch((err) => {
+      res.status(500).send(err);
+    });
 });
 
-router.put("/:id", (req, res: Response) => {
+// PUT /api/bookmarks/:id
+router.put("/:id", (req: Request, res: Response): void => {
   BookmarkSvc.update(req.params.id, req.body)
-    .then((bm) => (bm ? res.json(bm) : res.status(404).end()))
-    .catch((err) => res.status(500).send(err));
+    .then((bm) => {
+      if (bm) {
+        res.json(bm);
+      } else {
+        res.status(404).end();
+      }
+    })
+    .catch((err) => {
+      res.status(500).send(err);
+    });
 });
 
-router.delete("/:id", (req, res: Response) => {
+// DELETE /api/bookmarks/:id
+router.delete("/:id", (req: Request, res: Response): void => {
   BookmarkSvc.remove(req.params.id)
-    .then((bm) => (bm ? res.status(204).end() : res.status(404).end()))
-    .catch((err) => res.status(500).send(err));
+    .then((bm) => {
+      if (bm) {
+        res.status(204).end();
+      } else {
+        res.status(404).end();
+      }
+    })
+    .catch((err) => {
+      res.status(500).send(err);
+    });
 });
 
 export default router;

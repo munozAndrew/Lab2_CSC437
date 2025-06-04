@@ -35,18 +35,50 @@ var import_express = __toESM(require("express"));
 var import_group_svc = __toESM(require("../services/group-svc"));
 const router = import_express.default.Router();
 router.get("/", (_req, res) => {
-  import_group_svc.default.index().then((list) => res.json(list)).catch((err) => res.status(500).send(err));
+  import_group_svc.default.index().then((list) => {
+    res.json(list);
+  }).catch((err) => {
+    res.status(500).send(err);
+  });
 });
 router.get("/:id", (req, res) => {
-  import_group_svc.default.get(req.params.id).then((g) => g ? res.json(g) : res.status(404).end()).catch(() => res.status(500).end());
+  import_group_svc.default.get(req.params.id).then((g) => {
+    if (g) {
+      res.json(g);
+    } else {
+      res.status(404).end();
+    }
+  }).catch(() => {
+    res.status(500).end();
+  });
 });
 router.post("/", (req, res) => {
-  import_group_svc.default.create(req.body).then((g) => res.status(201).json(g)).catch((err) => res.status(500).send(err));
+  import_group_svc.default.create(req.body).then((g) => {
+    res.status(201).json(g);
+  }).catch((err) => {
+    res.status(500).send(err);
+  });
 });
 router.put("/:id", (req, res) => {
-  import_group_svc.default.update(req.params.id, req.body).then((g) => g ? res.json(g) : res.status(404).end()).catch((err) => res.status(500).send(err));
+  import_group_svc.default.update(req.params.id, req.body).then((g) => {
+    if (g) {
+      res.json(g);
+    } else {
+      res.status(404).end();
+    }
+  }).catch((err) => {
+    res.status(500).send(err);
+  });
 });
 router.delete("/:id", (req, res) => {
-  import_group_svc.default.remove(req.params.id).then((g) => g ? res.status(204).end() : res.status(404).end()).catch((err) => res.status(500).send(err));
+  import_group_svc.default.remove(req.params.id).then((g) => {
+    if (g) {
+      res.status(204).end();
+    } else {
+      res.status(404).end();
+    }
+  }).catch((err) => {
+    res.status(500).send(err);
+  });
 });
 var groups_default = router;
