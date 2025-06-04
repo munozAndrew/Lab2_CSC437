@@ -1,37 +1,75 @@
+// packages/server/src/routes/groups.ts
 import express, { Request, Response } from "express";
 import { Group } from "../models/group";
 import GroupSvc from "../services/group-svc";
 
 const router = express.Router();
 
-router.get("/", (_req, res: Response) => {
+// GET /api/groups
+router.get("/", (_req: Request, res: Response): void => {
   GroupSvc.index()
-    .then((list: Group[]) => res.json(list))
-    .catch((err) => res.status(500).send(err));
+    .then((list: Group[]) => {
+      res.json(list);
+    })
+    .catch((err) => {
+      res.status(500).send(err);
+    });
 });
 
-router.get("/:id", (req, res: Response) => {
+// GET /api/groups/:id
+router.get("/:id", (req: Request, res: Response): void => {
   GroupSvc.get(req.params.id)
-    .then((g) => (g ? res.json(g) : res.status(404).end()))
-    .catch(() => res.status(500).end());
+    .then((g) => {
+      if (g) {
+        res.json(g);
+      } else {
+        res.status(404).end();
+      }
+    })
+    .catch(() => {
+      res.status(500).end();
+    });
 });
 
-router.post("/", (req, res: Response) => {
+// POST /api/groups
+router.post("/", (req: Request, res: Response): void => {
   GroupSvc.create(req.body)
-    .then((g) => res.status(201).json(g))
-    .catch((err) => res.status(500).send(err));
+    .then((g) => {
+      res.status(201).json(g);
+    })
+    .catch((err) => {
+      res.status(500).send(err);
+    });
 });
 
-router.put("/:id", (req, res: Response) => {
+// PUT /api/groups/:id
+router.put("/:id", (req: Request, res: Response): void => {
   GroupSvc.update(req.params.id, req.body)
-    .then((g) => (g ? res.json(g) : res.status(404).end()))
-    .catch((err) => res.status(500).send(err));
+    .then((g) => {
+      if (g) {
+        res.json(g);
+      } else {
+        res.status(404).end();
+      }
+    })
+    .catch((err) => {
+      res.status(500).send(err);
+    });
 });
 
-router.delete("/:id", (req, res: Response) => {
+// DELETE /api/groups/:id
+router.delete("/:id", (req: Request, res: Response): void => {
   GroupSvc.remove(req.params.id)
-    .then((g) => (g ? res.status(204).end() : res.status(404).end()))
-    .catch((err) => res.status(500).send(err));
+    .then((g) => {
+      if (g) {
+        res.status(204).end();
+      } else {
+        res.status(404).end();
+      }
+    })
+    .catch((err) => {
+      res.status(500).send(err);
+    });
 });
 
 export default router;

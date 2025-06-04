@@ -4,6 +4,8 @@ import { connect } from "./services/mongo";
 import bookmarksRouter from "./routes/bookmarks";
 import groupsRouter    from "./routes/groups";
 
+import authRouter, { authenticateUser } from "./routes/auth";
+
 connect("BookmarkDB");
 
 const app = express();
@@ -17,8 +19,10 @@ app.get("/hello", (_req: Request, res: Response) => {
   res.send("Hello, World");
 });
 
-app.use("/api/bookmarks", bookmarksRouter);
-app.use("/api/groups",    groupsRouter);
+app.use("/auth", authRouter);
+
+app.use("/api/bookmarks", authenticateUser, bookmarksRouter);
+app.use("/api/groups",    authenticateUser, groupsRouter);
 
 app.listen(port, () => {
   console.log(`Server running at http://localhost:${port}`);
