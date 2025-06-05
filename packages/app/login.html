@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf‑8" />
+  <meta charset="utf-8" />
   <title>Login</title>
 
   <script type="module">
@@ -9,7 +9,7 @@
     import { LoginFormElement } from "/src/auth/login-form.ts";
 
     define({
-      "mu-auth": Auth.Provider,
+      "mu-auth":   Auth.Provider,
       "login-form": LoginFormElement
     });
   </script>
@@ -20,13 +20,13 @@
     .card { border:1px solid #ccc; padding:1rem; border-radius:4px;
             box-shadow:0 2px 8px rgba(0,0,0,.1); width:320px; }
     form label { display:flex; flex-direction:column; margin-block:.75rem; }
-    input { padding:.5rem; font-size:1rem; }
+    input  { padding:.5rem; font-size:1rem; }
     button { padding:.5rem; font-size:1rem; cursor:pointer; }
     a { color:royalblue; }
   </style>
 </head>
 <body>
-  <mu-auth>
+  <mu-auth provides="tabsaver:auth">
     <div class="card">
       <h2>User Login</h2>
 
