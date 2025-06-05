@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf‑8" />
+    <title>TabSaver – App</title>
+
+    <!--<link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/page.css" /> -->
+  </head>
+
+  <body>
+    <mu-history provides="tabsaver:history">
+      <mu-auth provides="tabsaver:auth" redirect="/app">
+        <article class="page">
+          <ts-header></ts-header>
+          <mu-switch></mu-switch>
+        </article>
+      </mu-auth>
+    </mu-history>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
