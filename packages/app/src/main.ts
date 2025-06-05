@@ -4,6 +4,7 @@ import {
   History,
   Switch,
   Store,
+  Form,
   define
 } from "@calpoly/mustang";
 import { html } from "lit";
@@ -16,8 +17,13 @@ import { HeaderElement } from "./components/ts-header";
 import { HomeViewElement } from "./views/home-view";
 import { BookmarksViewElement } from "./views/bookmarks-view";
 import { GroupsViewElement } from "./views/groups-view";
+import { BookmarkEditElement } from "./views/bookmarks-edit";
 
 const routes = [
+
+  { path: "/app/bookmarks/:id/edit", protected: true,
+  view: p => html`<bookmark-edit id=${p.id}></bookmark-edit>` },
+  
   { path: "/app/groups", protected: true,
     view: () => html`<groups-view></groups-view>` },
 
@@ -49,7 +55,10 @@ define({
   "mu-store":   AppStore,
   "ts-header":  HeaderElement,
   "home-view":        HomeViewElement,
+  "mu-form":    Form.Element,
   "bookmarks-view":   BookmarksViewElement,
+  "bookmark-edit": BookmarkEditElement,
+
   "groups-view":      GroupsViewElement
   // "about-view":     AboutViewElement
 });
