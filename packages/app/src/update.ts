@@ -9,14 +9,19 @@ export default function update(
   user: Auth.User
 ) {
   switch (msg[0]) {
-
+    
     case "bookmarks/load":
       apiFetch("/api/bookmarks", { headers: Auth.headers(user) })
-        .then(r => r.ok ? r.json() : Promise.reject(r.statusText))
-        .then(list =>
-          apply(m => ({ ...m, bookmarks: list }))
-        )
+        .then(r => r.json())
+        .then(list => apply(m => ({ ...m, bookmarks: list })))
         .catch(err => console.error("load bookmarks:", err));
+      break;
+
+    case "groups/load":
+      apiFetch("/api/groups", { headers: Auth.headers(user) })
+        .then(r => r.json())
+        .then(list => apply(m => ({ ...m, groups: list })))
+        .catch(err => console.error("load groups:", err));
       break;
 
     default:
