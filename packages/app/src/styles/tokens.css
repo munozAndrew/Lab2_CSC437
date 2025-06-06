@@ -1,0 +1,39 @@
+:root {
+    --color-primary: rgb(59, 130, 246);
+    --color-primary-light: rgb(147, 197, 253);
+    --color-primary-dark: rgb(37, 99, 235);
+    
+    --color-background: rgb(255, 255, 255);
+    --color-background-secondary: rgb(249, 250, 251);
+    --color-background-card: rgb(255, 255, 255);
+    
+    --color-text: rgb(17, 24, 39);
+    --color-text-secondary: rgb(75, 85, 99);
+    --color-text-light: rgb(156, 163, 175);
+    
+    --color-border: rgb(229, 231, 235);
+    --color-border-light: rgb(243, 244, 246);
+    
+    --color-accent: var(--color-primary);
+    --color-accent-inverted: var(--color-background);
+    --color-link: var(--color-primary);
+    --color-link-inverted: var(--color-background);
+    --color-text-inverted: var(--color-background);
+}
+
+body.dark-mode {
+    --color-background: rgb(17, 24, 39);
+    --color-background-secondary: rgb(31, 41, 55);
+    --color-background-card: rgb(31, 41, 55);
+    
+    --color-text: rgb(243, 244, 246);
+    --color-text-secondary: rgb(156, 163, 175);
+    --color-text-light: rgb(107, 114, 128);
+    
+    --color-border: rgb(55, 65, 81);
+    --color-border-light: rgb(75, 85, 99);
+    
+    --color-primary: rgb(96, 165, 250);
+    --color-primary-light: rgb(147, 197, 253);
+    --color-primary-dark: rgb(59, 130, 246);
+}

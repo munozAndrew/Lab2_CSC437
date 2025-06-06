@@ -18,6 +18,7 @@ import { HomeViewElement } from "./views/home-view";
 import { BookmarksViewElement } from "./views/bookmarks-view";
 import { GroupsViewElement } from "./views/groups-view";
 import { BookmarkEditElement } from "./views/bookmarks-edit";
+import { AboutViewElement } from "./views/about-view";
 
 const routes = [
 
@@ -29,7 +30,8 @@ const routes = [
 
   { path: "/app/bookmarks", protected: true,
     view: () => html`<bookmarks-view></bookmarks-view>` },
-
+  { path: "/app/about",
+      view: () => html`<about-view></about-view>` },
   { path: "/app",
     view: () => html`<home-view></home-view>` },
 
@@ -59,6 +61,6 @@ define({
   "bookmarks-view":   BookmarksViewElement,
   "bookmark-edit": BookmarkEditElement,
 
-  "groups-view":      GroupsViewElement
-  // "about-view":     AboutViewElement
+  "groups-view":      GroupsViewElement,
+  "about-view":     AboutViewElement
 });
