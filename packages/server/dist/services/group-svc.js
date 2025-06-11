@@ -41,7 +41,7 @@ const GroupSchema = new import_mongoose.Schema(
     },
     createdAt: {
       type: Date,
-      default: () => /* @__PURE__ */ new Date()
+      default: () => new Date()
     }
   },
   { collection: "groups" }

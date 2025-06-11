@@ -31,7 +31,7 @@ const BookmarkSchema = new import_mongoose.Schema(
     description: String,
     tags: [String],
     groupIds: [String],
-    createdAt: { type: Date, default: () => /* @__PURE__ */ new Date() },
+    createdAt: { type: Date, default: () => new Date() },
     lastVisited: Date,
     visitCount: { type: Number, default: 0 },
     orderIndex: Number,
