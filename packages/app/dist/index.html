@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>TabSaver App</title>
+
+    
+    <link rel="stylesheet" href="/styles/tokens.css" />
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/page.css" />
+    
+    <script type="module" crossorigin src="/assets/index-BkyrlqEx.js"></script>
+  </head>
+
+  <body>
+    <mu-history provides="tabsaver:history">
+      <mu-auth provides="tabsaver:auth" redirect="/app/login">
+        <mu-store provides="tabsaver:model">
+          <article class="page">
+            <ts-header></ts-header>
+            <mu-switch></mu-switch>
+          </article>
+        </mu-store>
+      </mu-auth>
+    </mu-history>
+
+  </body>
+</html>

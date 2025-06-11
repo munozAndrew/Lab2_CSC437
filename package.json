@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run start:app --workspace=packages/server",
+    "dev:server": "npm run dev --workspace=packages/server",
+    "dev:app": "npm run dev --workspace=packages/app",
+    "build": "npm run build --workspace=packages/server && npm run build --workspace=packages/app"
   },
   "author": "",
   "license": "ISC",

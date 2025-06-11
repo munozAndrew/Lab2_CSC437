@@ -1,0 +1,22 @@
+npm error Lifecycle script `start` failed with error:
+npm error workspace app@1.0.0
+npm error location /home/amunozar/Lab2_CSC437/packages/app
+npm error Missing script: "start"
+npm error
+npm error Did you mean one of these?
+npm error   npm star # Mark your favorite packages
+npm error   npm stars # View packages marked as favorites
+npm error
+npm error To see a list of scripts, run:
+npm error   npm run --workspace=app@1.0.0
+npm error Lifecycle script `start` failed with error:
+npm error workspace app@1.0.0
+npm error location /home/amunozar/Lab2_CSC437/packages/app
+npm error Missing script: "start"
+npm error
+npm error Did you mean one of these?
+npm error   npm star # Mark your favorite packages
+npm error   npm stars # View packages marked as favorites
+npm error
+npm error To see a list of scripts, run:
+npm error   npm run --workspace=app@1.0.0

@@ -150,7 +150,7 @@ export class LoginViewElement extends View<Model, Msg> {
       <div class="card">
         <h2>User Login</h2>
         
-        <login-form api="/auth/login" redirect="/app">
+        <login-form api="/auth/login" redirect="/">
           <label>
             Username:
             <input name="username" autocomplete="off" placeholder="Enter your username" />

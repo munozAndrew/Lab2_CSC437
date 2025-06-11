@@ -1,0 +1,150 @@
+
+> server@1.0.0 start
+> npm run build && npm run start:node
+
+
+> server@1.0.0 build
+> npx etsc
+
+Using default config
+Built in: 41.988ms
+
+> server@1.0.0 start:node
+> node dist/index.js
+
+node:internal/modules/cjs/loader:1215
+  throw err;
+  ^
+
+Error: Cannot find module 'express'
+Require stack:
+- /home/amunozar/Lab2_CSC437/packages/server/dist/index.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1212:15)
+    at Module._load (node:internal/modules/cjs/loader:1043:27)
+    at Module.require (node:internal/modules/cjs/loader:1298:19)
+    at require (node:internal/modules/helpers:182:18)
+    at Object.<anonymous> (/home/amunozar/Lab2_CSC437/packages/server/dist/index.js:24:30)
+    at Module._compile (node:internal/modules/cjs/loader:1529:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+    at Module.load (node:internal/modules/cjs/loader:1275:32)
+    at Module._load (node:internal/modules/cjs/loader:1096:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [ '/home/amunozar/Lab2_CSC437/packages/server/dist/index.js' ]
+}
+
+Node.js v20.19.1
+npm error Lifecycle script `start:node` failed with error:
+npm error code 1
+npm error path /home/amunozar/Lab2_CSC437/packages/server
+npm error workspace server@1.0.0
+npm error location /home/amunozar/Lab2_CSC437/packages/server
+npm error command failed
+npm error command sh -c node dist/index.js
+npm error Lifecycle script `start` failed with error:
+npm error code 1
+npm error path /home/amunozar/Lab2_CSC437/packages/server
+npm error workspace server@1.0.0
+npm error location /home/amunozar/Lab2_CSC437/packages/server
+npm error command failed
+npm error command sh -c npm run build && npm run start:node
+
+> server@1.0.0 start
+> npm run build && npm run start:node
+
+
+> server@1.0.0 build
+> npx etsc
+
+Using default config
+Built in: 37.004ms
+
+> server@1.0.0 start:node
+> node dist/index.js
+
+node:internal/modules/cjs/loader:1215
+  throw err;
+  ^
+
+Error: Cannot find module 'express'
+Require stack:
+- /home/amunozar/Lab2_CSC437/packages/server/dist/index.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1212:15)
+    at Module._load (node:internal/modules/cjs/loader:1043:27)
+    at Module.require (node:internal/modules/cjs/loader:1298:19)
+    at require (node:internal/modules/helpers:182:18)
+    at Object.<anonymous> (/home/amunozar/Lab2_CSC437/packages/server/dist/index.js:24:30)
+    at Module._compile (node:internal/modules/cjs/loader:1529:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+    at Module.load (node:internal/modules/cjs/loader:1275:32)
+    at Module._load (node:internal/modules/cjs/loader:1096:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [ '/home/amunozar/Lab2_CSC437/packages/server/dist/index.js' ]
+}
+
+Node.js v20.19.1
+npm error Lifecycle script `start:node` failed with error:
+npm error code 1
+npm error path /home/amunozar/Lab2_CSC437/packages/server
+npm error workspace server@1.0.0
+npm error location /home/amunozar/Lab2_CSC437/packages/server
+npm error command failed
+npm error command sh -c node dist/index.js
+npm error Lifecycle script `start` failed with error:
+npm error code 1
+npm error path /home/amunozar/Lab2_CSC437/packages/server
+npm error workspace server@1.0.0
+npm error location /home/amunozar/Lab2_CSC437/packages/server
+npm error command failed
+npm error command sh -c npm run build && npm run start:node
+
+> server@1.0.0 start
+> npm run build && npm run start:node
+
+
+> server@1.0.0 build
+> npx etsc
+
+Using default config
+Built in: 36.938ms
+
+> server@1.0.0 start:node
+> node dist/index.js
+
+node:internal/modules/cjs/loader:1215
+  throw err;
+  ^
+
+Error: Cannot find module 'express'
+Require stack:
+- /home/amunozar/Lab2_CSC437/packages/server/dist/index.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1212:15)
+    at Module._load (node:internal/modules/cjs/loader:1043:27)
+    at Module.require (node:internal/modules/cjs/loader:1298:19)
+    at require (node:internal/modules/helpers:182:18)
+    at Object.<anonymous> (/home/amunozar/Lab2_CSC437/packages/server/dist/index.js:24:30)
+    at Module._compile (node:internal/modules/cjs/loader:1529:14)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+    at Module.load (node:internal/modules/cjs/loader:1275:32)
+    at Module._load (node:internal/modules/cjs/loader:1096:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:164:12) {
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [ '/home/amunozar/Lab2_CSC437/packages/server/dist/index.js' ]
+}
+
+Node.js v20.19.1
+npm error Lifecycle script `start:node` failed with error:
+npm error code 1
+npm error path /home/amunozar/Lab2_CSC437/packages/server
+npm error workspace server@1.0.0
+npm error location /home/amunozar/Lab2_CSC437/packages/server
+npm error command failed
+npm error command sh -c node dist/index.js
+npm error Lifecycle script `start` failed with error:
+npm error code 1
+npm error path /home/amunozar/Lab2_CSC437/packages/server
+npm error workspace server@1.0.0
+npm error location /home/amunozar/Lab2_CSC437/packages/server
+npm error command failed
+npm error command sh -c npm run build && npm run start:node

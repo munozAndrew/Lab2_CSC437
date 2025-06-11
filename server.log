@@ -1,0 +1,38 @@
+nohup: ignoring input
+
+> lab2_csc437@1.0.0 start
+> npm run start:app --workspace=packages/server
+
+
+> server@1.0.0 start:app
+> cross-env STATIC=../app/dist npm run start
+
+
+> server@1.0.0 start
+> npm run build && npm run start:node
+
+
+> server@1.0.0 build
+> npx etsc
+
+Using default config
+Built in: 35.474ms
+
+> server@1.0.0 start:node
+> node dist/index.js
+
+Connecting to MongoDB at mongodb+srv://user:<password>@cluster0.rriubrl.mongodb.net/BookmarkDB
+Server running at http://localhost:3000
+[0;36mMongoose:[0m user_credentials.createIndex({ username: [33m1[39m }, { unique: [33mtrue[39m, background: [33mtrue[39m })
+[0;36mMongoose:[0m bookmarks.find({}, {})
+[0;36mMongoose:[0m user_credentials.find({ username: [32m'magik'[39m }, {})
+[0;36mMongoose:[0m bookmarks.find({}, {})
+[0;36mMongoose:[0m bookmarks.insertOne({ id: [32m'e8660e4e-6de2-4f66-a868-5d86f9d892af'[39m, name: [32m'A'[39m, url: [32m'https://www.bestbuy.com/site/'[39m, description: [32m'best buy site'[39m, tags: [], groupIds: [], visitCount: [33m0[39m, pinned: [33mfalse[39m, _id: ObjectId("6848d4f5d131b65efc4b5f00"), createdAt: new Date("Wed, 11 Jun 2025 00:59:33 GMT"), __v: [33m0[39m}, {})
+[0;36mMongoose:[0m bookmarks.find({}, {})
+npm error Lifecycle script `start:app` failed with error:
+npm error code 1
+npm error path /home/amunozar/Lab2_CSC437/packages/server
+npm error workspace server@1.0.0
+npm error location /home/amunozar/Lab2_CSC437/packages/server
+npm error command failed
+npm error command sh -c cross-env STATIC=../app/dist npm run start
