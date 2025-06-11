@@ -19,8 +19,13 @@ import { BookmarksViewElement } from "./views/bookmarks-view";
 import { GroupsViewElement } from "./views/groups-view";
 import { BookmarkEditElement } from "./views/bookmarks-edit";
 import { AboutViewElement } from "./views/about-view";
+import { LoginViewElement } from "./views/login-view";
+import { LoginFormElement } from "./auth/login-form";
+
 
 const routes = [
+  { path: "/app/login", 
+    view: () => html`<login-view></login-view>` },
 
   { path: "/app/bookmarks/:id/edit", protected: true,
   view: p => html`<bookmark-edit id=${p.id}></bookmark-edit>` },
@@ -55,11 +60,14 @@ define({
   "mu-history": History.Provider,
   "mu-switch":  AppSwitch,
   "mu-store":   AppStore,
+  "login-form": LoginFormElement,
+
   "ts-header":  HeaderElement,
   "home-view":        HomeViewElement,
   "mu-form":    Form.Element,
   "bookmarks-view":   BookmarksViewElement,
   "bookmark-edit": BookmarkEditElement,
+  "login-view":     LoginViewElement,
 
   "groups-view":      GroupsViewElement,
   "about-view":     AboutViewElement
